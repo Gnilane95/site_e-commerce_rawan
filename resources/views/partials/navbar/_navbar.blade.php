@@ -10,11 +10,11 @@
     </div>
     {{-- nav items --}}
     <div class="space-x-5">
-        <a href="">Bijoux</a>
-        <a href="">Collections femmes</a>
-        <a href="">Abayas hommes</a>
-        <a href="">Enfants</a>
-        <a href="">blog</a>
+        <a href="" class="hover:text-primary hover:text-xl">Bijoux</a>
+        <a href="" class="hover:text-primary hover:text-xl">Collections femmes</a>
+        <a href="" class="hover:text-primary hover:text-xl">Abayas hommes</a>
+        <a href="" class="hover:text-primary hover:text-xl">Enfants</a>
+        <a href="" class="hover:text-primary hover:text-xl">blog</a>
     </div>
     {{-- other items --}}
     <div class="space-x-5 flex items-center">

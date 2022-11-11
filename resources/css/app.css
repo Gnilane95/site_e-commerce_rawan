@@ -20,6 +20,15 @@ body{
     position: absolute;
     /* top: 0; */
 }
+.about{
+    background-image: url("/public/img/fondMarbre2.png");
+    height: 50vh;
+    background-position: center;
+    /* background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
