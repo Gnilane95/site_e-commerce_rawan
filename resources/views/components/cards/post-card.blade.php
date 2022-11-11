@@ -11,6 +11,4 @@
         <p class="">{{ Str::substr($content, 0, 180) }}</p>
     </div>
     <p class=" font-bold text-green-600 pl-44 pb-5"> Publié le {{ $created_at }}</p>
-    
-    
 </div>
