@@ -3,7 +3,7 @@ body{
 }
 .hero{
     background-image: url("/public/img/bijoux.jpg"), url("/public/img/abaya-femme.webp");
-    height: 75vh;
+    height: 80vh;
     background-position: center;
     background-size: cover;
     display: flex;

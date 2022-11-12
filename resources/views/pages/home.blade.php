@@ -52,7 +52,7 @@
                 </div>
             </div>
             {{-- section vêtement --}}
-            <div class="mx-36 mb-28">
+            <div class="mx-36 mb-16">
                 <h1 class="text-center font-black text-2xl mb-5">Nos <span class="text-secondary italic">vêtements</span></h1>
                 <div class="flex justify-around space-x-5 mb-5">
                     <div class="shadow-xl">
