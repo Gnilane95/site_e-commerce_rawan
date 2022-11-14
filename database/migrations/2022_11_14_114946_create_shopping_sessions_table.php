@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('commandes', function (Blueprint $table) {
+        Schema::create('shopping_sessions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('article_id')->onDelete('cascade');
-            $table->foreignId('client_id')->onDelete('cascade');
-            $table->string('state');
+            $table->foreignId('carts_id')->onDelete('cascade');
+            $table->foreignId('users_id')->onDelete('cascade');
+            $table->float('total');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commandes');
+        Schema::dropIfExists('shopping_sessions');
     }
 };

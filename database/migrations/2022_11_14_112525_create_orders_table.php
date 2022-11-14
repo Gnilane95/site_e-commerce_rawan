@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('paniers', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('article_id')->onDelete('cascade');
-            $table->foreignId('client_id')->onDelete('cascade');
-            $table->integer('quantity');
+            $table->foreignId('users_id')->onDelete('cascade');
+            $table->foreignId('order_details_id')->onDelete('cascade');
+            $table->float('amount');
+            $table->string('state');
+            $table->date('ship_date');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paniers');
+        Schema::dropIfExists('orders');
     }
 };

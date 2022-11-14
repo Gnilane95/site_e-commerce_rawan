@@ -1,11 +1,11 @@
 <x-layouts.main-layout title="Accueil">
     {{-- hero home --}}
-        <div class="hero">
-            <div class="flex-col-reverse justify-center text-center">
-                <img src="img/logo-rawan-removebg-preview.png" alt="Logo Rawan" class="w-48 absolute z-50 top-10 left-[700px]">
-                <p class="font-bold absolute z-50 left-[670px] text-white text-xl italic">
-                    Votre boutique de <span class="text-secondary">prêt-à-porter</span> <br> et de <span class="text-primary">bijoux</span>
-                </p>
+        <div class="hero ">
+            <div class="flex-col flex justify-center items-center text-center absolute z-50 left-auto h-full">
+                    <img src="img/logo-rawan-removebg-preview.png" alt="Logo Rawan" width="200px">
+                    <p class="font-bold text-white text-xl italic">
+                        Votre boutique de <span class="text-secondary">prêt-à-porter</span> <br> et de <span class="text-primary">bijoux</span>
+                    </p>
             </div>
             <div class="overlay"></div>
         </div>

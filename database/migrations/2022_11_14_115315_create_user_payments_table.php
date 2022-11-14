@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('post_categories', function (Blueprint $table) {
+        Schema::create('user_payments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('post_blog_id')->onDelete('cascade')->nullable();
+            $table->foreignId('users_id')->onDelete('cascade');
+            $table->string('payment_type');
+            $table->string('acount_no');
+            $table->date('expiry');
+            $table->integer('code');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_categories');
+        Schema::dropIfExists('user_payments');
     }
 };

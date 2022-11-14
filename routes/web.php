@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BijouxController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ArticleController::class, 'index'])->name('home');
 Route::resource('articles', ArticleController::class);
+Route::get('/bijoux',[BijouxController::class, 'index'])->name('bijoux');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

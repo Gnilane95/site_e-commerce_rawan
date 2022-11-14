@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->text('content');
-            $table->string('name');
+            $table->string('author');
+            $table->string('url_img');
             $table->timestamps();
         });
     }
