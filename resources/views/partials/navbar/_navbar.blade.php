@@ -9,10 +9,10 @@
     {{-- nav items --}}
     <div class="space-x-5 flex ">
         <a href="{{ route('bijoux') }}" class="hover:text-primary">Bijoux</a>
-        <a href="" class="hover:text-primary">Collections femmes</a>
-        <a href="" class="hover:text-primary">Abayas hommes</a>
-        <a href="" class="hover:text-primary">Enfants</a>
-        <a href="" class="hover:text-primary">blog</a>
+        <a href="{{ route('femmes') }}" class="hover:text-primary">Collections femmes</a>
+        <a href="{{ route('hommes') }}" class="hover:text-primary">Abayas hommes</a>
+        <a href="{{ route('enfants') }}" class="hover:text-primary">Enfants</a>
+        <a href="{{ route('blog') }}" class="hover:text-primary">blog</a>
     </div>
     {{-- other items --}}
     <div class="space-x-5 flex items-center">
