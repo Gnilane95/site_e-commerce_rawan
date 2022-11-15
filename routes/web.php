@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ArticleController::class, 'index'])->name('home');
 Route::resource('articles', ArticleController::class);
 Route::get('/bijoux',[BijouxController::class, 'index'])->name('bijoux');
+Route::resource('bijoux', BijouxController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

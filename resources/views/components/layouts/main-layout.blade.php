@@ -25,6 +25,8 @@
     {{ $slot }}
     @vite('resources/js/app.js')
     @vite('resources/js/scroll.js')
-    @include('partials.footer._footer')
+    <div class="bg-primary">
+        @include('partials.footer._footer')
+    </div>
 </body>
 </html>

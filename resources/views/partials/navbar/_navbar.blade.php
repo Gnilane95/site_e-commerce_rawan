@@ -16,9 +16,17 @@
     </div>
     {{-- other items --}}
     <div class="space-x-5 flex items-center">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-regular fa-user"></i>
-        <i class="fa-solid fa-bag-shopping"></i>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+        @guest
+            <a href="{{ route('login') }}"><i class="fa-regular fa-user"></i></a>
+        @endguest
+        @auth
+        <div class="flex justify-center gap-7 items-center">
+            {{-- <p>{{ Auth::user()->name }}</p> --}}
+            <x-btn-logout/>
+        </div>
+        @endauth
         {{-- @guest
             <a href="{{ route('login') }}" class="{{ $styleLink }}">Se connecter</a>
             <a href="{{ route('register') }}" class="{{ $styleLink }}">S'inscrire</a>

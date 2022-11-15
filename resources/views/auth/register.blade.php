@@ -1,4 +1,5 @@
-<x-guest-layout>
+<x-guest-layout title="Créer un compte">
+    <h1 class="uppercase text-center mt-10 text-2xl font-black">Créer un compte</h1>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -9,7 +10,15 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
+            <!-- First Name -->
+            <div>
+                <x-input-label for="first_name" :value="__('Name')" />
+
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+
+                <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
+            </div>
+            <!-- Last Name -->
             <div>
                 <x-input-label for="name" :value="__('Name')" />
 

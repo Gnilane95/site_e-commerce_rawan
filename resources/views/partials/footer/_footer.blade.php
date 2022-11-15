@@ -1,4 +1,4 @@
-<footer class="flex justify-around  py-7 bg-primary">
+<footer class="flex justify-around  py-7">
     <div class="space-x-5 font-bold">
         <a href="" class="hover:text-white">Conditions de vente</a>
         <a href="" class="hover:text-white">Mentions légales</a>
