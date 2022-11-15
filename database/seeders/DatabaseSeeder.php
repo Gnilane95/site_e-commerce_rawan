@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(RolesAndPermissionsSeeder::class);
         User::factory(10)->create();
         PostBlog::factory(10)->create();
         PostCategory::factory(10)->create();
