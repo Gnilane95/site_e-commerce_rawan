@@ -7,32 +7,38 @@ use Filament\Tables;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
+use Spatie\Permission\Models\Role;
 use Filament\Forms\Components\Card;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Eloquent\Builder;
-use Filament\Tables\Columns\TextInputColumn;
-// use App\Filament\Resources\PermissionResource;
+use Filament\Forms\Components\MultiSelect;
+use App\Filament\Resources\RoleResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\PermissionResource\Pages;
-use App\Filament\Resources\PermissionResource\RelationManagers;
+use App\Filament\Resources\RoleResource\RelationManagers;
+use App\Filament\Resources\RoleResource\RelationManagers\PermissionsRelationManager;
 
-class PermissionResource extends Resource
+class RoleResource extends Resource
 {
-    protected static ?string $model = Permission::class;
+    protected static ?string $model = Role::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-key';
+    protected static ?string $navigationIcon = 'heroicon-o-cog';
 
     protected static ?string $navigationGroup = 'Administration';
 
-    public static function form(Form $form): Form {
+
+    public static function form(Form $form): Form
+    {
         return $form
             ->schema([
                 Card::make()
                     ->schema([
                         TextInput::make('name')
-                        ->unique()
+                        ->unique(ignoreRecord: true)
+                        ->required(),
+                        MultiSelect::make('permissions')
+                        ->relationship('permissions','name')
+                        ->preload()
                         ->required()
                     ])
             ]);
@@ -61,10 +67,19 @@ class PermissionResource extends Resource
             ]);
     }
     
+    public static function getRelations(): array
+    {
+        return [
+            PermissionsRelationManager::class,
+        ];
+    }
+    
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManagePermissions::route('/'),
+            'index' => Pages\ListRoles::route('/'),
+            'create' => Pages\CreateRole::route('/create'),
+            'edit' => Pages\EditRole::route('/{record}/edit'),
         ];
     }    
 }
